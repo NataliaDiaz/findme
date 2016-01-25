@@ -1,0 +1,78 @@
+package com.example.crowdcloud;
+
+import android.app.Application;
+import android.os.Bundle;
+import android.view.Menu;
+import com.walkbase.location.*;
+import com.walkbase.*;
+
+public class WalkbaseInfo extends Application {
+
+    
+    protected void createLocation() {
+        
+    	WBLocation = WBLocation( latitude, double longitude, double accuracy, long timestamp, int siteId, int floor) 
+    }
+
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+    
+}
+
+
+
+
+
+<Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="ShowInMap"
+            android:text="@string/ShowInMap" />
+			
+			
+			
+			
+			
+			[2013-02-09 19:44:27 - CrowdCloud] Failed to install CrowdCloud.apk on device 'emulator-5556': timeout
+[2013-02-09 19:44:27 - CrowdCloud] Launch canceled!
+[2013-02-09 19:57:56 - CrowdCloud] ------------------------------
+[2013-02-09 19:57:56 - CrowdCloud] Android Launch!
+[2013-02-09 19:57:56 - CrowdCloud] adb is running normally.
+[2013-02-09 19:57:56 - CrowdCloud] Performing com.example.crowdcloud.MainActivity activity launch
+[2013-02-09 19:57:56 - CrowdCloud] Automatic Target Mode: launching new emulator with compatible AVD 'NataliaTest'
+[2013-02-09 19:57:56 - CrowdCloud] Launching a new emulator with Virtual Device 'NataliaTest'
+[2013-02-09 19:58:30 - CrowdCloud] ------------------------------
+[2013-02-09 19:58:30 - CrowdCloud] Android Launch!
+[2013-02-09 19:58:30 - CrowdCloud] adb is running normally.
+[2013-02-09 19:58:30 - CrowdCloud] Performing com.example.crowdcloud.MainActivity activity launch
+[2013-02-09 19:58:30 - CrowdCloud] Automatic Target Mode: launching new emulator with compatible AVD 'NataliaTest'
+[2013-02-09 19:58:30 - CrowdCloud] Launching a new emulator with Virtual Device 'NataliaTest'
+[2013-02-09 19:58:52 - Emulator] WARNING: Data partition already in use. Changes will not persist!
+[2013-02-09 19:58:52 - Emulator] WARNING: Cache partition already in use. Changes will not persist!
+[2013-02-09 19:58:56 - Emulator] emulator: emulator window was out of view and was recentered
+[2013-02-09 19:58:56 - Emulator] 
+[2013-02-09 19:58:56 - CrowdCloud] New emulator found: emulator-5556
+[2013-02-09 19:58:56 - CrowdCloud] Waiting for HOME ('android.process.acore') to be launched...
+[2013-02-09 20:00:01 - Emulator] WARNING: Data partition already in use. Changes will not persist!
+[2013-02-09 20:00:01 - Emulator] WARNING: Cache partition already in use. Changes will not persist!
+[2013-02-09 20:00:05 - Emulator] emulator: emulator window was out of view and was recentered
+[2013-02-09 20:00:05 - Emulator] 
+[2013-02-09 20:00:05 - CrowdCloud] New emulator found: emulator-5558
+[2013-02-09 20:00:05 - CrowdCloud] Waiting for HOME ('android.process.acore') to be launched...
+[2013-02-09 20:00:23 - CrowdCloud] emulator-5556 disconnected! Cancelling 'com.example.crowdcloud.MainActivity activity launch'!
+[2013-02-09 20:00:50 - CrowdCloud] emulator-5558 disconnected! Cancelling 'com.example.crowdcloud.MainActivity activity launch'!
+
+
+
+
+
+
+[2013-02-10 10:16:06 - FriendFinder] Installing FriendFinder.apk...
+[2013-02-10 10:18:11 - FriendFinder] Failed to install FriendFinder.apk on device 'emulator-5554!
+[2013-02-10 10:18:11 - FriendFinder] (null)
+[2013-02-10 10:18:11 - FriendFinder] Launch canceled!

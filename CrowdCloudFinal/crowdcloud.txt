@@ -1,0 +1,163 @@
+CROWD CLOUD (tm) (or whatever name we'll use)
+
+Here is a draft suggestion of the project, i.e. this is just something we can
+use to start sorting out our ideas and how to implement them. Feel free to
+add your own ideas or modify the existing ones.
+
+Use Cases
+=========
+
+Use cases marked with * are high-value, cases marked with + are bonus
+
+A1. Log in *
+  1. User sends credentials to server
+  2. Server compares credentials to those in a database and
+    a. Adds the user to subscribers
+    b. Rejects the credentials
+  3. Server sends a reply (accept/reject)
+
+A2. Log out
+  1. User sends log out command to server
+  2. Server removes user from current subscribers
+  3. Server acknowledges log out
+
+B1. Add a friend *
+  1. User sends a friend request to server
+    - Request contains friend name/username
+  2. Server receives the request and:
+    a. Stores the request in case the friend is offline
+      - The request is sent to friend immediately he logs in next time
+    b. Sends the request to the friend
+    c. Rejects the request in case the user is not logged in/bad credentials/bad data
+  3a. The friend accepts the request
+    - Server adds the friendship to database and acknowledges both parties
+  3b. The friend rejects the request
+    - Server acknowledges the requester
+
+B2. Remove a friend
+  1. User sends a "remove friend" request to server
+  2. Server receives the request and:
+    a. Rejects the request in case of bad credentials/data
+    b. Removes friendship from database and notifies the other party
+  3. The server acknowledges the requester
+    
+C. Send update *
+  1. User sends his new location to server
+  2. Server will verify the update and:
+    a. Reject it in case credentials/data are wrong, notify sender
+    b. Find all user's friends who are online and send the update to them
+
+D1. Mark Point of Interest +
+  1. User taps on the screen to mark a POI
+  2. Program sends POI request to server
+  3. Server will:
+    a. Reject the request in case of bad credentials/data
+    b. Store the POI in database and broadcast the POI to user's online friends
+  4. Server sends an acknowledgement
+  
+D2. Remove Point of Interest
+  1. User chooses to delete his POI
+  2. Server checks that the user's credentials/data are in order and:
+    a. Rejects it if he doesn't own the POI or has bad credentials
+    b. Removes the POI from database and broadcasts the change to user's online friends
+  3. Server sends an acknowledgement
+  
+
+
+
+Client-Server communication JSON template
+========================================
+
+{
+  "sender" : "id",
+  "hash" : "12345690",
+  "mac" : "1BAC22FF",
+  "address" : "192.168.1.1",
+  "timestamp" : "01012014133700",
+  "action_type" : "action_type",
+  "action" : {
+    ...
+  }
+}
+
+"sender" = The sender's id
+"hash" = The sender's hash (for verification, can be skipped for simplicity)
+"mac" = The sender's MAC address (may not be necessary)
+"address" = The sender's address (may not be necessary)
+"timestamp" = Message timestamp (may not be necessary...)
+"action_type" = Defines the meaning of the message
+"action" = Data for specific "action_type"'s
+
+The server will then change "sender", "hash", "mac" and "address" to own settings. Not sure how we'll store the addresses of the clients, so it's still open.
+
+
+Action Types:
+
+* update
+      "action" : {
+	"updater" : "updater's name"
+	"coords" : [x, y, z]
+      }
+
+* login
+      "action" : {
+	"password" : "password"
+      }
+      
+* poi_broadcast
+      "action" : {
+	"inserter" : "name",
+	"coords" : [x, y, z],
+	"name" : "name"
+      }
+
+* poi_remove
+      "action" : {
+	"name" : "name"
+      }
+
+* login_reply, friend_request_reply, logout_reply, 
+  update_reply, poi_remove_reply, poi_broadcast_reply
+      "action" : {
+	  "reply" : "y/n",
+	  "reason" : "reason for failure"
+	}
+
+* logout
+      "action" : {
+      }
+
+* friend_request, remove_friend
+      "action" : {
+	"requester" : "requester's name",
+	"friend" : "friend name"
+      }
+
+      
+      
+Database Tables
+===============
+
+
+USER
+- id : int, primary key			(key)
+- name : string				(username)
+- real_name : string			(real name, may not be needed)
+- hash : string				(password "hash", no need to be secure)
+- address : string			(user's current address, may not be necessary)
+
+FRIENDSHIP
+- user1 : USER.id , foreign key	
+- user2 : USER.id , foreign key
+
+REQUEST_QUEUE (used to store requests which cannot be delivered)
+- id : int, primary key		
+- requester : USER.id , foreign key
+- receiver : USER.id , foreign key
+- message : string			(full JSON message.. may be a _bad_ idea)
+
+POI
+- id : int , primary key
+- user : USER.id , foreign key
+- coords : float			(coordinates)
+- name : string				(name of POI)

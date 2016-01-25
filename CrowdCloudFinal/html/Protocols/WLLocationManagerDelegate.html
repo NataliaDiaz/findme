@@ -1,0 +1,559 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>WLLocationManagerDelegate Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">WalkbaseLocation </a></h1>
+				<a id="developerHome" href="../index.html">Walkbase</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">WLLocationManagerDelegate Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/locationManager:didFailToFetchLastKnownUserLocationWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- locationManager:didFailToFetchLastKnownUserLocationWithError:</option>
+	
+	<option value="//api/name/locationManager:didFailWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- locationManager:didFailWithError:</option>
+	
+	<option value="//api/name/locationManager:didFetchLastKnownUserLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- locationManager:didFetchLastKnownUserLocation:</option>
+	
+	<option value="//api/name/locationManager:didUpdateToLocation:fromLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- locationManager:didUpdateToLocation:fromLocation:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Delegate methods">Delegate methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager:didFailToFetchLastKnownUserLocationWithError:">locationManager:didFailToFetchLastKnownUserLocationWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager:didFailWithError:">locationManager:didFailWithError:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager:didFetchLastKnownUserLocation:">locationManager:didFetchLastKnownUserLocation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/locationManager:didUpdateToLocation:fromLocation:">locationManager:didUpdateToLocation:fromLocation:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="WLLocationManagerDelegate Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">WLLocationManagerDelegate Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">WLLocationManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>WLLocationManagerDelegate</code> protocol defines the methods used to receive location updates from a <a href="../Classes/WLLocationManager.html">WLLocationManager</a> object.</p>
+
+<p>Upon receiving a successful location or heading update, you can use the result to update your user interface or perform other actions. If the location could not be determined, you
+might want to stop updates for a short period of time and try again later. You can use the stopUpdatingLocation method of <a href="../Classes/WLLocationManager.html">WLLocationManager</a> to stop location updates.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Delegate methods" name="task_Delegate methods"></a>
+						
+<h3 class="subsubtitle task-title">Delegate methods</h3>
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationManager:didUpdateToLocation:fromLocation:">&ndash;&nbsp;locationManager:didUpdateToLocation:fromLocation:</a></code>
+		<span class="tooltip"><p>Tells the delegate new location data is available.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationManager:didFailWithError:">&ndash;&nbsp;locationManager:didFailWithError:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the location manager was unable to retrieve a location value.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationManager:didFetchLastKnownUserLocation:">&ndash;&nbsp;locationManager:didFetchLastKnownUserLocation:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the location manager fetched the last known (to us) user location</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/locationManager:didFailToFetchLastKnownUserLocationWithError:">&ndash;&nbsp;locationManager:didFailToFetchLastKnownUserLocationWithError:</a></code>
+		<span class="tooltip"><p>Tells the delegate that the location manager was unable to retrieve a location value.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/locationManager:didFailToFetchLastKnownUserLocationWithError:" title="locationManager:didFailToFetchLastKnownUserLocationWithError:"></a>
+	<h3 class="subsubtitle method-title">locationManager:didFailToFetchLastKnownUserLocationWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the location manager was unable to retrieve a location value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)locationManager:(WLLocationManager *)<em>manager</em> didFailToFetchLastKnownUserLocationWithError:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The location manager object that was unable to retrieve the location.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>The error object containing the reason the location could not be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Implementation of this method is optional. You should however implement this method. There are a few possible
+causes for this error to occur, including:</p>
+
+<ul>
+<li>The device has no available internet connection.</li>
+<li>The library can not reach the Walkbase Analytics servers.</li>
+<li>The library can not read the MAC address of the phone.</li>
+<li>You are using an invalid API key.</li>
+<li>The user has never shown up at any Walkbase Analytics site which your API key is allowed to access.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WLLocationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationManager:didFailWithError:" title="locationManager:didFailWithError:"></a>
+	<h3 class="subsubtitle method-title">locationManager:didFailWithError:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the location manager was unable to retrieve a location value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)locationManager:(WLLocationManager *)<em>manager</em> didFailWithError:(NSError *)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The location manager object that was unable to retrieve the location.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>The error object containing the reason the location could not be retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Implementation of this method is optional. You should however implement this method. There are a few possible
+causes for this error to occur, including:</p>
+
+<ul>
+<li>The user has WiFi turned off in his/her settings.</li>
+<li>The user is not connected to the correct WiFi network.</li>
+<li>The WiFi network has no available internet connection.</li>
+<li>The library can not reach the Walkbase Analytics servers.</li>
+<li>The library can not read the MAC address of the phone.</li>
+<li>You are using an invalid API key.</li>
+</ul>
+
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WLLocationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationManager:didFetchLastKnownUserLocation:" title="locationManager:didFetchLastKnownUserLocation:"></a>
+	<h3 class="subsubtitle method-title">locationManager:didFetchLastKnownUserLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the location manager fetched the last known (to us) user location</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)locationManager:(WLLocationManager *)<em>manager</em> didFetchLastKnownUserLocation:(WLLocation *)<em>location</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The location manager object that fetched the location.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>location</em></dt>
+			<dd><p>The location that was retrieved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Implementation of this method is optional. You should however implement this method.
+This method can be used to determine when the user has been spotted last at a Walkbase Analytics
+location. Calling this method will fetch the last known location for the calling iPhone/iPad from
+all the locations available to the calling user&rsquo;s API key.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WLLocationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/locationManager:didUpdateToLocation:fromLocation:" title="locationManager:didUpdateToLocation:fromLocation:"></a>
+	<h3 class="subsubtitle method-title">locationManager:didUpdateToLocation:fromLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate new location data is available.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)locationManager:(WLLocationManager *)<em>manager</em> didUpdateToLocation:(WLLocation *)<em>newLocation</em> fromLocation:(WLLocation *)<em>oldLocation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>manager</em></dt>
+			<dd><p>The <a href="../Classes/WLLocationManager.html">WLLocationManager</a> that fired the event.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newLocation</em></dt>
+			<dd><p>The newest location available via the Walkbase Analytics service.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>oldLocation</em></dt>
+			<dd><p>The previous location, useful for extrapolating which way the user is heading or the user&rsquo;s speed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Implementation of this method is optional. You should however implement this method. The method delivers
+location updates in real-time as soon as they are calculated on the Walkbase Analytics back-end. You can use the
+<a href="../Classes/WLLocation.html#//api/name/timestamp">[WLLocation timestamp]</a> property to determine how &ldquo;fresh&rdquo; the location is.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">WLLocationManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Walkbase. All rights reserved. (Last updated: 2012-11-30)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
