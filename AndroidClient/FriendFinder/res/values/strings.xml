@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FriendFinder</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="edit_message">Enter a message</string>
+    <string name="button_send">Send</string>
+    <string name="title_activity_display_welcome_message">Welcome to CrowdCloud!</string>
+    <string name="Username">User name</string>
+    <string name="Password">Password</string>
+    <string name="LogIn">Log In</string>
+    <string name="OnlineFriends">Online Friends</string>
+    <string name="Friends">Friends</string>
+    <string name="Find">Find</string>
+    <string name="Andreas">Andreas Åkeson</string>
+    <string name="Martin">Martin Koskinen</string>
+    <string name="Natalia">Natalia Díaz Rodríguez</string>
+    <string name="norris">norris</string>
+    <string name="segal">segal</string>
+    <string name="arnold">arnold</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="YourFriendsAreHere">Your Friends are here:</string>
+    <string name="ShowInMap">Take me to them!</string>
+    <string name="poiButton">CreatePOI</string>
+    <string name="selectFriendsButton">Friends</string>
+    <string name="poiName">Name and description</string>
+    <string name="savePOI">Save</string>
+    <string name="cancelSavingPOI">Cancel</string>
+    <string name="makePOIPrivate">Make Point of Interest Private</string>
+    <string name="title_activity_mark_poi">MarkPOI</string>
+    <string name="title_activity_create_poi">CreatePOIActivity</string>
+
+</resources>

@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FriendFinder" >
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="# Online Friends:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/Lon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/latitude"
+        android:text="# POIs: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Lon"
+        android:text="Pos. Accuracy: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <com.wbhackathon.friendfinder.radar.RadarView
+        android:id="@+id/radar_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toggleButton1"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/acc_data" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/radar_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:gravity="top" >
+
+        <Button
+            android:id="@+id/selectStalkees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selectFriendsButton" />
+
+        <Button
+            android:id="@+id/createPOIButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="createPOI"
+            android:text="@string/poiButton" />
+
+        <ToggleButton
+            android:id="@+id/POIButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="ToggleButton"
+            android:textOff="Show POIs"
+            android:textOn="No POIs" />
+
+        <ToggleButton
+            android:id="@+id/ScanButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="onToggleClicked"
+            android:text="ToggleButton"
+            android:textOff="Scan OFF"
+            android:textOn="Scan ON" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/noKnownPois"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Lon"
+        android:layout_alignLeft="@+id/noOnlineFriends"
+        android:text="@string/hello_world" />
+
+    <TextView
+        android:id="@+id/noOnlineFriends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/latitude"
+        android:layout_alignBottom="@+id/latitude"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/latitude"
+        android:text="@string/hello_world" />
+
+    <TextView
+        android:id="@+id/acc_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/noKnownPois"
+        android:text="TextView" />
+
+</RelativeLayout>
